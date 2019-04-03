@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+<field formid="email" label="Enter Email" type="string" mandatory="true" regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" parse-error="validate.email" binding="email" max-length="50" value-error="profile.usernametaken"/>
+	
+
+
+		<field formid="password" label="Enter Password" type="string" mandatory="true" min-length="8" max-length="255"
+			   range-error="resource.8_255characters"
+			/>
+			   
+			   
+ <field formid="content" label="Write Content" type="string" mandatory="false" />
+			   
+			   
+			   
+			   
+	<action formid="submit" valid-form="true"/>
+		<action formid="cancel" valid-form="false"/>
+</form>

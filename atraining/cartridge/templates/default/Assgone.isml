@@ -1,0 +1,28 @@
+<!--- TEMPLATENAME: Assgone.isml --->
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+
+<isinclude template="util/modules"/>
+<isdecorate template="account/pt_account">
+ <center>   <h1>First Assigenment </h1></center> 
+
+<form action="${URLUtils.httpsContinue()}" method="post" class="form-horizontal" id="FirstForm">
+	<fieldset>
+		<isinputfield formfield="${pdict.CurrentForms.Assgone.email}" type="input"/>
+		<isinputfield formfield="${pdict.CurrentForms.Assgone.password}" type="password"/>
+		<isinputfield formfield="${pdict.CurrentForms.Assgone.content}" type="input"/>
+		
+	</fieldset>
+	<fieldset>
+
+	<fieldset>
+			<center><button type="submit"
+				name="${pdict.CurrentForms.Assgone.submit.htmlName}"
+				value="submit">Send Email</button></fieldset></center><br>
+				<center><button type="cancel"
+				name="${pdict.CurrentForms.Assgone.cancel.htmlName}"
+				value="submit">Reset</button></center>
+			
+	</fieldset>
+	
+</form>
+</isdecorate>

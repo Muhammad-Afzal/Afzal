@@ -1,0 +1,4 @@
+<!--- TEMPLATENAME: Template1.isml --->
+<br>
+<h1>This is Calender  Template</h1> <br/>
+<isinclude template="calendar"/>

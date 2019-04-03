@@ -1,0 +1,5 @@
+<!--- TEMPLATENAME: cachedpage.isml --->
+<isinclude template="cashe"/>
+<iscache type="relative" minute="1" />
+<isprint value="${new Date()}" style="DATE_TIME" />
+

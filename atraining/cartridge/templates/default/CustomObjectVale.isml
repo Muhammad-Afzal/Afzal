@@ -1,0 +1,28 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+
+<isinclude template="util/modules"/>
+<isdecorate template="account/pt_account">
+ <center>   <h1>Student Information </h1></center> 
+
+<form action="${URLUtils.httpsContinue()}" method="post" class="form-horizontal" id="FirstForm">
+	<fieldset>
+		<isinputfield formfield="${pdict.CurrentForms.CustomObjectValue.FirstName}" type="input"/>
+		<isinputfield formfield="${pdict.CurrentForms.CustomObjectValue.LastName}" type="input"/>
+		
+		<isinputfield formfield="${pdict.CurrentForms.CustomObjectValue.Mail}" type="input"/>
+	</fieldset>
+	<fieldset>
+<isinputfield formfield="${pdict.CurrentForms.CustomObjectValue.StudentStatus}" type="select"/>
+
+	</fieldset>
+	<fieldset>
+			<button type="submit"
+				name="${pdict.CurrentForms.CustomObjectValue.submit.htmlName}"
+				value="submit">Submit</button>
+			<button type="cancel"
+				name="${pdict.CurrentForms.CustomObjectValue.cancel.htmlName}"
+				value="submit">Cancel</button>
+	</fieldset>
+	
+</form>
+</isdecorate>

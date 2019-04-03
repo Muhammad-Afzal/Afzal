@@ -1,0 +1,35 @@
+<!--- TEMPLATENAME: GetProductVarient.isml --->
+
+<isif condition="${pdict.Product.isMaster()==true}"> <!--here is check product is master-->
+<h1>Product Is Master</h1>
+<isscript>
+var varmodel=pdict.Product.variationModel;   /*here get variation model why i  dont know*/
+out.print(varmodel);
+var varatribute=varmodel.getProductVariationAttribute('color'); /*get thevar atribute pass (size and color)*/
+var show=varatribute.getID(); /* here we get the varient id,displayname,etc */
+out.print(show);
+var allvalue=varmodel.getAllValues(varatribute); /*get allvalue and pass varatribute*/
+for(var a=0;a < allvalue.length;a++)
+{
+out.print(' <br> '+allvalue[a].displayValue + ' <br>  '); /*with for loop display varient of product*/
+out.print(varmodel.hasOrderableVariants(varatribute,allvalue[a])) //here checked it is orderable or not
+
+
+out.print(varmodel.urlSelectVariationValue('Product-Show', varatribute,
+allvalue[a]))              //here we checked the url
+
+}
+var img=pdict.Product.getImage('large',0); //here we get the image url
+out.print(img.absURL);
+
+out.print(pdict.Product.name)
+
+ </isscript>
+ <a href="${img.getURL()}" title="${pdict.Product.name}">  //here image show  through url
+ <img src="${img.getURL()}" alt="${pdict.Product.name}" title="${pdict.Product.name}" height='195'
+width='195' />
+</a>
+<a href="${img.getURL()}" title="${pdict.Product.name}"> ${pdict.Product.name}</a>
+<iselse>
+<h2>Product Is Not Master Product</h2>
+ </isif>

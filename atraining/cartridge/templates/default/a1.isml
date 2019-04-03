@@ -1,0 +1,48 @@
+<!--- TEMPLATENAME: a1.isml --->
+
+<isdecorate template="search/pt_productsearchresult_nohits"> 
+<html>
+<head>
+<title>Hello</title>
+</head>
+<body>
+Hello World! I am No 1
+hay sir gffgdfgd dgrdrd ffdfsdfsfdsfdsdf fdgffd hello sir afzal adnan ali </br>
+</body>
+</html>
+
+<isprint value="afzal" />;
+<isscript> 
+//here we get resource s  localization
+var resources=dw.web.Resource;
+out.print(resources.msg("resource.errorzip","forms",null));
+out.print(resources.msgf("country.canada","forms",null,"My Name Is Afzal"));
+
+//console.log();
+//out.print('My Second Name is :' + afzal);
+</isscript>
+ 
+ <br>
+
+<button type="button" class="Submit" >
+Submit</button>
+
+<isscript>
+
+
+</isscript>
+
+<script type="text/javascript"><isinclude template="resources/appresources"/></script>
+<script>
+
+console.log(Urls.addProduct)
+console.log(Urls.afzal)
+
+</script>
+
+<iscomment>
+<iscache type="relative" minute="1" />
+<isprint value="${new Date()}" style="DATE_TIME" />
+
+ </iscomment>
+ </isdecorate>

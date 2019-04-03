@@ -1,0 +1,117 @@
+<!--- TEMPLATENAME: OrderModel.isml --->
+<h1>helloooooo</h1>
+<isscript>
+var ordctr=dw.order.LineItemCtnr;
+var order=dw.order.OrderMgr;
+
+out.print(order );
+var Order=order.getOrder("00000001");
+out.print('<br><br>');
+
+out.print('<h1> GET Order Merchandice text/price/grose </h1> ');
+
+
+out.print( 'Affliated Partner Id: ' + ' ' + Order.orderNo + '</br>' );
+out.print( '<h1>Order Level Price</h1> ' + '</br>' );
+out.print( 'Total Net Price: ' + ' ' + Order.getTotalNetPrice() + '</br>' );
+out.print( 'Total Gross Price: ' + ' ' + Order.getTotalGrossPrice() + '</br>' );
+
+out.print( '<h1>Total Taxes</h1> ' + '</br>' );
+out.print( 'Total Shiping Tax: ' + ' ' + Order.getShippingTotalTax() + '</br>' );
+out.print( 'Total Merchendize Tax: ' + ' ' + Order.getMerchandizeTotalTax() + '</br>' );
+out.print( 'Total Gift Tax: ' + ' ' + Order.getGiftCertificateTotalTax() + '</br>' );
+out.print( 'Total Tax: ' + ' ' + Order.getTotalTax() + '</br>' );
+
+
+out.print( '<h1>Mercehdize Level Price</h1> ' + '</br>' );
+out.print( 'Total Merchendize Gross Price: ' + ' ' + Order.getMerchandizeTotalGrossPrice() + '</br>' );
+out.print( 'Total Mercendize Net Price: ' + ' ' + Order.getMerchandizeTotalNetPrice() + '</br>' );
+out.print( 'Total Mercendize Total Price: ' + ' ' + Order.getMerchandizeTotalPrice() + '</br>' );
+
+out.print( '<h1>Shipment Level Price</h1> ' + '</br>' );
+out.print( 'Total Shipping Net Price: ' + ' ' + Order.getShippingTotalNetPrice() + '</br>' );
+out.print( 'Total Shipping Gross Price: ' + ' ' + Order.getShippingTotalGrossPrice() + '</br>' );
+out.print( 'Total Shipping Total Price: ' + ' ' + Order.getShippingTotalPrice() + '</br>' );
+
+
+
+
+
+
+
+     out.print(Order.updateTotals());
+     
+out.print('<br><br>');
+
+out.print('<h1> GET Shipment PaymentInstruments</h1> ');
+var paymentinst=Order.getPaymentInstruments();
+for(var a=0; a < paymentinst.length;a++)<!--  -->
+{
+
+
+out.print( 'creditCardNumber number: ' + ' ' + paymentinst[a].creditCardNumber + '</br>' );
+out.print( 'creditCardType: ' + ' ' + paymentinst[a].creditCardType + '</br>' );
+out.print( 'creditCardExpirationYear : ' + ' ' + paymentinst[a].creditCardExpirationYear + '</br>' );
+ 
+
+}
+out.print('<br><br>');
+
+out.print('<h1> GET Shipment  Propertice</h1> ');
+//here get about shipment
+var ship=Order.getShipments();
+for(var a=0; a < ship.length;a++)<!--  -->
+{
+out.print(' GET Shipment ID:: ' + ship[a].ID +' <br> ');
+out.print(' GET Shipment ShipmentNo:: ' + ship[a].shipmentNo +' <br> ');
+out.print(' GET shippingTotalPrice:: ' + ship[a].shippingTotalPrice +' <br> ');
+out.print(' GET shippingTotalTax:: ' + ship[a].shippingTotalTax +' <br> ');
+
+out.print(' GET totalNetPrice:: ' + ship[a].totalNetPrice +' <br> ');
+
+out.print(' GET totalTax:: ' + ship[a].totalTax +' <br> ');
+ 
+ out.print(' GET adjest total price:: ' + ship[a].adjustedShippingTotalPrice +' <br> ');
+ 
+ 
+}
+
+
+
+
+out.print('<br><br>');
+
+out.print('<h1> GET  Line Item</h1> ');
+//here get about shipment
+var lineitem=Order.getAllLineItems();
+out.print(lineitem)
+for(var a=0; a < lineitem.length;a++)<!--  -->
+{
+out.print(' return Line Item of order:: ' + lineitem[a] +' <br> ');
+ 
+}
+
+out.print('<br><br>');
+
+out.print('<h1> GET Product Line Item</h1> ');
+//here get about shipment
+var prolineitem=Order.getAllProductLineItems();
+out.print(prolineitem)
+for(var a=0; a < prolineitem.length;a++)<!--  -->
+{
+out.print(' Product ID:: ' + prolineitem[a].productID  +' <br> ');
+out.print(' Product Name:: ' + prolineitem[a].productName  +' <br> ');
+
+
+
+
+
+ 
+}
+
+
+
+out.print('<br><br>');
+
+
+ </isscript>

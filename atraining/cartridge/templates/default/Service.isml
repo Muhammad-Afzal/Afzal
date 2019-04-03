@@ -1,0 +1,18 @@
+<!--- TEMPLATENAME: Service.isml --->
+<h1>Hello service</h1>
+${pdict.url}
+
+
+
+${pdict.wdata}
+${pdict.wdata.observations.location[0].country}
+${pdict.wdata.observations.location[0].city}
+
+
+${pdict.wdata.observations.location[0].observation[0].description}
+${pdict.timeout}
+<isslot id="Rao" context="global"  description="Hello Here Is slot"  />
+
+
+
+<isslot id="show" context="global"  description="Hello sir"  />

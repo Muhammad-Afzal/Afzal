@@ -1,0 +1,5 @@
+<isscript>
+var Customer=dw.customer.CustomerMgr.getProfile('00000502');
+out.print(Customer.email);
+ </isscript>
+ ${pdict.Out}

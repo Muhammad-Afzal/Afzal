@@ -1,0 +1,22 @@
+<!--- TEMPLATENAME: PriceModel.isml --->
+${pdict.Product.priceModel.getPriceInfo().priceBook.displayName}
+<isscript>
+
+ var optionproduct=pdict.Product.isOptionProduct(); //here is cheked optional product return true and false
+ out.print(optionproduct);
+ 
+ var prductprice=pdict.Product.getPriceModel().getPrice();     //here we get the price
+out.print(prductprice);
+
+
+var varmodel=pdict.Product.variationModel;    // here we get 
+out.print(varmodel);
+var varients=varmodel.variants;
+for(var a=0;a < 1;a++)
+{
+out.print(varients[0].ID   +  ' <br> ' )  
+
+
+}
+
+ </isscript>

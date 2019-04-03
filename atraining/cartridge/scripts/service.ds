@@ -1,0 +1,19 @@
+var svc = require('dw/svc');
+
+var LocalServiceRegistry = require('dw/svc/LocalServiceRegistry');
+   /**
+    *
+    * HTTP Services
+    *
+    */   
+	
+	var weatherStatus = LocalServiceRegistry.createService("afzalSer", {
+		createRequest: function(svc:HTTPService, args){
+			svc.setRequestMethod("GET");
+		},
+		parseResponse: function(svc:HTTPService, client:HTTPClient) {
+			return client;
+		}
+	});
+	
+exports.WeatherStatus = weatherStatus;

@@ -1,0 +1,4 @@
+<!--- TEMPLATENAME: tagstest.isml --->
+<isset name="myMoney" value="1200000" scope="page" />
+<isprint value="${myMoney}" style="MONEY_LONG"/>
+<isprint value="${myMoney}" style="MONEY_SHORT"/>

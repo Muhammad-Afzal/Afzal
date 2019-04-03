@@ -1,0 +1,6 @@
+<!--- TEMPLATENAME: jempty.isml --->
+
+${pdict.myParameteronISML}
+
+<isinclude url="${URLUtils.https('Product-
+GetLowATSThreshold','productid','P0048')}"/>

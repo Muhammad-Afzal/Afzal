@@ -1,0 +1,19 @@
+Ahsan is a Big Boy
+<iscomment>
+<isinclude url="${URLUtils.https('JShowProduct-Start','param','P0048')}"/>
+<iscomponent pipeline="JShowProduct-Start" param="P0048"
+typeOfTV="Wide-screen"/>
+<isinclude url="${URLUtils.url('JShowProduct-Start', ['param', 'P0048','param1','Ahsan is a Big Man'])}"/> 
+</iscomment>
+<isset name="num" value="${1}" scope="page" />
+<isif condition="${num==1}">
+<isif condition="${num==1}">
+Nested if is working here
+ </isif>
+Do Something Here.
+<iselseif condition="${num==2}" >
+Do some thing if if-else true.
+<iselse>
+Athe end else section here
+ </isif>
+ 

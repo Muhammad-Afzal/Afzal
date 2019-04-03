@@ -1,0 +1,3 @@
+<!--- TEMPLATENAME: cashe.isml --->
+<iscache type="relative" minute="1" />
+<isprint value="${new Date()}" style="DATE_TIME" />

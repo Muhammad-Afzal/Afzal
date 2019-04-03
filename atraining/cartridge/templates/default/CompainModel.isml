@@ -1,0 +1,126 @@
+<!--- TEMPLATENAME: CompainModel.isml --->
+${pdict.Product.ID}
+
+<isscript>
+
+var compains=dw.campaign.PromotionMgr;
+var promot=dw.campaign.Promotion;
+var com=compains.getCampaigns();
+var pro=compains.getPromotions();
+
+
+out.print(com);
+for(var a=0; a < com.length; a++)  //here we get all compain in 
+{
+
+out.print(com[a].getStartDate()+ ' <br> ')
+out.print(com[a].getEndDate() + ' <br> ')
+out.print(com[a].getCustomerGroups() + ' <br> ')
+
+
+
+}
+
+out.print("here is promotion"+ ' <br> ');   //here we get all promotion
+for(var a=0; a < pro.length; a++)
+{
+out.print(pro[a].getName()+ ' <br> ')
+out.print(pro[a].ID + ' <br> ')
+out.print(pro[a].getStartDate()+ ' <br> ')
+out.print(pro[a].getEndDate() + ' <br> ')
+}
+var prop=compains.getPromotion("newpromotion");    //here we get promotion by id of promotion
+out.print(prop.getName() + ' <br> ');
+var custgroup=prop.getCustomerGroups();            //here we get the customer group
+out.print("here is customer group"+ ' <br> ');
+for(var a=0; a < custgroup.length; a++)
+{
+out.print(custgroup[a].ruleBased + ' <br> ')
+out.print(custgroup[a].description + ' <br> ')
+}
+
+
+ var proplan=compains.getActiveCustomerPromotions();  //here we get activecustomerpromotion
+ out.print(proplan);
+ 
+ var prodpro=proplan.getProductPromotions(pdict.Product); //here we pass the the product
+ out.print(prodpro)
+ 
+ for(var a=0; a < prodpro.length; a++)
+{
+
+out.print(prodpro[a].getName() + ' <br> ')  //here we get promotion name
+out.print(prodpro[a].calloutMsg + ' <br> ') //here we get callout message of  prootion in product
+out.print(prodpro[a].details + ' <br> ')     //here we get detail of promotion
+out.print(prodpro[a].getPromotionClass() + ' <br> ')  //here get the class of promotion
+out.print(prodpro[a].getPromotionalPrice(pdict.Product) + ' <br> ') //here return the present price
+
+}
+ 
+ 
+ out.print("asas");
+//here we get bonus line
+var bonusdisacount=dw.order.LineItemCtnr;
+
+var test=bonusdisacount.UUID;
+out.print(test);
+ 
+   
+
+ 
+ //here we get current basket
+ var baskmgr=dw.order.BasketMgr;             //here   importorder package              
+ 
+ 
+ var currentbasket=baskmgr.getCurrentBasket();         //get current basket 
+ 
+ 
+ var discountPlan=compains.getDiscounts(currentbasket)   //get discount plan
+ 
+
+   var appdis=discountPlan.getApproachingOrderDiscounts();   //get order discount
+    out.print(appdis);
+  for(var a=0; a <  appdis.length; a++)
+{
+out.print( "afzal" + ' <br> ')
+out.print( appdis[a] + ' <br> ')
+
+}
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+ </isscript>

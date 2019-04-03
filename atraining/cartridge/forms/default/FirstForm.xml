@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+	<field formid="DriverName" label="Enter Driver Name:" type="string" mandatory="true" max-length="50" binding="custom.DriverName"/>
+	<field formid="PhoneNumber" label="Enter Phone Number" type="string" mandatory="true" max-length="50" binding="custom.PhoneNumber" />
+	<field formid="DriverCatagory" label="Enter Driver Catagory" type="string" mandatory="false" binding="custom.DriverCatagory">
+		<options>
+			<option optionid="General Information" value="First" label="General Information"/>
+			<option optionid="Order Status" value="Second" label="Order Status"/>
+		</options>	
+	</field>
+	<action formid="submit" valid-form="true"/>
+	<action formid="cancel" valid-form="false"/>
+</form>
+
+
+

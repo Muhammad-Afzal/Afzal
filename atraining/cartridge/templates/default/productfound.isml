@@ -1,0 +1,24 @@
+<!--- TEMPLATENAME: productfound.isml --->
+<iscomment>
+<isinclude url="${URLUtils.url('Product-IncludeLastVisited') }"/>
+${Resource.msgf('productfoundMessage', 'myBundle',null, pdict.myProduct.name)}
+<br>
+${pdict.myProduct.name} has been found
+
+<isredirect location="${URLUtils.https('JCall-Start')}"
+permanent="true"/>
+
+<isprint value="${pdict.ahsandata}" />
+
+<br>
+<br>
+<br>
+<br>
+ </iscomment>
+<isdecorate template="product/pt_productdetails">
+<isset name="product" value="${pdict.myProduct}" scope="pdict"/>
+<isset name="Test" value="${true}" scope="pdict"/>
+<isset name="Test" value="Adnan" scope="pdict"/>
+<isinclude template="product/producttile" />
+</isdecorate>
+

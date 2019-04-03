@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+	<field formid="FirstName" label="Enter First Name:" type="string" mandatory="true" max-length="50" binding="custom.StudentFirstName"/>
+	<field formid="LastName" label="Enter Last Name" type="string" mandatory="true" max-length="50" binding="custom.StudentLastName" />
+	<field formid="Mail" label="Enter E-Mail" type="string" mandatory="true" max-length="50" binding="custom.StudentEmail" />
+	
+	<field formid="StudentStatus" label="Select Status" type="string" mandatory="false" binding="custom.StudentStatus">
+		<options>
+			<option optionid="Pass" value="First" label="Pass"/>
+			<option optionid="Fail" value="Second" label="Fail"/>
+		</options>	
+	</field>
+	<action formid="submit" valid-form="true"/>
+	<action formid="cancel" valid-form="false"/>
+</form>
+
+
+
